@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Home from "./pages/Home";
+import Loader from "./components/Loader";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    loading: true,
+  };
+
+  render() {
+    if (this.state.loading === true) {
+      return (
+        <div className="app">
+          <Loader />
+        </div>
+      );
+    } else if (this.state.loading === false) {
+      return (
+        <div>
+          <Home />
+        </div>
+      );
+    }
+  }
 }
 
 export default App;
