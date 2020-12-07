@@ -4,7 +4,7 @@ import Loader from "./components/Loader";
 
 class App extends React.Component {
   state = {
-    loading: true,
+    loading: false,
   };
 
   render() {
